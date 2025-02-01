@@ -1,28 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Lottie from "lottie-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import Lottie from "@/components/ui/LottieViewer";
 
 export default function NotFound() {
     const router = useRouter();
-    const [animationData, setAnimationData] = useState(null);
-
-    useEffect(() => {
-        // Load the Lottie animation data
-        fetch("https://assets8.lottiefiles.com/packages/lf20_kcsr6fcp.json")
-            .then(response => response.json())
-            .then(data => setAnimationData(data))
-            .catch(error => console.error("Error loading animation:", error));
-    }, []);
-
+    let link = "https://assets8.lottiefiles.com/packages/lf20_kcsr6fcp.json"
     return (
         <div className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6">
             <div className="w-full max-w-[280px] sm:max-w-[400px] mb-4 sm:mb-8">
-                {animationData && (
-                    <Lottie animationData={animationData} loop={true} />
-                )}
+
+                <Lottie link={link} />
             </div>
             <h1 className="text-2xl sm:text-4xl font-bold mb-2 sm:mb-4 text-center">
                 Page Not Found
