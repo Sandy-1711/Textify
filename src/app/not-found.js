@@ -28,7 +28,7 @@ export default function NotFound() {
                 Page Not Found
             </h1>
             <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 text-center max-w-[300px] sm:max-w-none">
-                The page you're looking for doesn't exist or has been moved.
+                The page you&apos;re looking for doesn&apos;t exist or has been moved.
             </p>
             <Button
                 onClick={() => router.push("/")}
